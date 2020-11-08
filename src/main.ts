@@ -1,4 +1,6 @@
+import { Logger } from "./greeter"
 
+const logger = new Logger();
 
 const s1= 110
 const s2 = 269
@@ -15,10 +17,10 @@ const theta2 = 180 - (thetaA + thetaB)
 const theta3 = thetaA + thetaD
 const theta4 = 360 - (theta1 + theta2 + theta3)
 
-print('Theta1 = {}'.format(theta1))
-print('Theta2 = {}'.format(theta2))
-print('Theta3 = {}'.format(theta3))
-print('Theta4 = {}'.format(theta4))
+logger.log(`Theta1 = ${theta1}`);
+logger.log(`Theta2 = ${theta2}`);
+logger.log(`Theta3 = ${theta3}`);
+logger.log(`Theta4 = ${theta4}`);
 
 
 // Solve for S4 by using law of cosins to solve to the diganal length
@@ -27,7 +29,7 @@ print('Theta4 = {}'.format(theta4))
 const theta1Rad = theta1 * (Math.PI / 180.0)
 const s5Sqr = Math.pow(s3, 2) + Math.pow(s1, 2) - (2 * s3 * s1 * Math.cos(theta1Rad))
 const s5 = Math.sqrt(s5Sqr)
-print('S5 = {}'.format(s5))
+logger.log(`S5 = ${s5}`);
 
 // Then use law of cosines to solve for theta2*x 
 //                s1^2 + s5^2 - s3^2
@@ -49,4 +51,4 @@ const theta21_x = theta2 * (1 - x)
 const theta2Rad1_x = theta21_x * Math.PI / 180
 
 const s4 = s5sintheta3 * Math.sin(theta2Rad1_x)
-
+logger.log(`S4 = ${s4}`);

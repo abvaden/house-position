@@ -1,12 +1,17 @@
 
-export class Greeter {
-    name: string;
+export class Logger {
 
-    constructor(name: string) {
-        this.name = name;
+    constructor() {
     }
 
-    greet(): void {
-        console.log(`Hi, ${this.name}!`);
+    log(message: string): void {
+        const node = document.getElementById("LogMessages");
+        node.appendChild(this.makeLogMessageNode(message))l
+    }
+
+    private makeLogMessageNode(message: string) {
+        const node = new HTMLDivElement();
+        node.innerText = message;
+        return node;
     }
 }
