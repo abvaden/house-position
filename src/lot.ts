@@ -63,10 +63,17 @@ export function LotPath(svg: SVGSVGElement) {
     const p3X = p2X + Math.sin(DegToRad(thetaA)) * s2;
     const p3Y = p2Y + Math.cos(DegToRad(thetaA)) * s2;
 
-    const p4X = p3X - Math.sin(DegToRad(thetaD)) * s4;
-    const p4Y = p3Y - Math.cos(DegToRad(thetaD)) * s4;
+    // const p4X = p3X - Math.sin(DegToRad(thetaD)) * s4;
+    // const p4Y = p3Y - Math.cos(DegToRad(thetaD)) * s4;
 
-    console.log(s4);
+    // Using road path
+    const p4X = p3X + Math.sin(DegToRad(ConvertToDecimalDegrees(12, 48.9, 0))) * s4;
+    const p4Y = p3Y - Math.cos(DegToRad(ConvertToDecimalDegrees(12, 48.9, 0))) * s4;
+
+    // Looks better but still isn't right
+    // const p4X = p3X + Math.sin(DegToRad(thetaD)) * s4;
+    // const p4Y = p3Y - Math.cos(DegToRad(thetaD)) * s4;
+
 
     const p1 = svg.createSVGPoint();
     p1.x = p1X;
