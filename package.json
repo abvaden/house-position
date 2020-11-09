@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --port 9000 --inline --progress --profile --colors --watch --content-base src/ --mode development",
-    "build": "webpack --config webpack.config.js --mode production",
+    "build": "webpack --config webpack.config.js --mode production && cp ./src/index.html ./docs/index.html",
     "build.prod": "webpack --config webpack.config.js -p",
     "build.esnext": "npm run build:types && npm run build:js",
     "build:types": "tsc --emitDeclarationOnly",
