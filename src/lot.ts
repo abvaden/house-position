@@ -109,10 +109,10 @@ export function LotPath(svg: SVGSVGElement) {
 
 
     g.appendChild(polygon);
-    g.appendChild(makePointGroup(svg, p1X, p1Y, 'P1'));
-    g.appendChild(makePointGroup(svg, p2X, p2Y, 'P2'));
-    g.appendChild(makePointGroup(svg, p3X, p3Y, 'P3'));
-    g.appendChild(makePointGroup(svg, p4X, p4Y, 'P4'));
+    // g.appendChild(makePointGroup(svg, p1X, p1Y, 'P1'));
+    // g.appendChild(makePointGroup(svg, p2X, p2Y, 'P2'));
+    // g.appendChild(makePointGroup(svg, p3X, p3Y, 'P3'));
+    // g.appendChild(makePointGroup(svg, p4X, p4Y, 'P4'));
 
     return g;
 }
