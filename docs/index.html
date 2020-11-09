@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style>
+        svg.cartesian>g {
+            transform: scaleY(-1);
+        }
+
+        /* Re-flip all <text> element descendants to their original side up. */
+        svg.cartesian>g text {
+            transform: scaleY(-1);
+        }
+
+        svg.cartesian {
+            display: flex;
+        }
+
+        #id {
+            display: grid;
+            grid-template-rows: 1fr 220px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="grid">
+        
+        <div style="height: 100%; width: 100%; display: block;">
+            <svg id="fig" class="cartesian" style="height: 100%; width: 100%;" viewBox="150 -262 500 500"
+                preserveAspectRatio="xMidYMid meet">
+            </svg>
+        </div>
+
+        <div>
+            <form>
+                <div class="form-row">
+                    <div class="col-4 offset-1">
+                        <h3>Pan</h3>
+                    </div>
+                    <div class="col-4 offset-1">
+                        <h3>House</h3>
+                    </div>
+                </div>
+    
+                <div class="form-row">
+                    <div class="col-2 offset-1">
+                        <div class="form-group">
+                            <label for="pan-x-input" id="pan-x-input-label">X: 150</label>
+                            <input id="pan-x-input" type="range" class="form-control-range" value="150" min="-500"
+                                max="500" step="1">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group">
+                            <label for="pan-y-input" id="pan-y-input-label">Y: -281</label>
+                            <input id="pan-y-input" type="range" class="form-control-range" value="-281" min="-500"
+                                max="500" step="1">
+                        </div>
+                    </div>
+    
+                    <div class="col-2 offset-1">
+                        <div class="form-group">
+                            <label for="house-x-range" id="house-x-range-label">X: 150</label>
+                            <input id="house-x-range" type="range" class="form-control-range" value="0" min="-500"
+                                max="500" step="1">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group">
+                            <label for="house-y-range" id="house-y-range-label">Y: -281</label>
+                            <input id="house-y-range" type="range" class="form-control-range" value="0" min="-500"
+                                max="500" step="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-2 offset-1">
+                        <div class="form-group">
+                            <label for="zoom-input" id="zoom-input-label">Zoom</label>
+                            <input id="zoom-input" type="range" class="form-control-range" value="1" min=".5"
+                                max="2" step=".001">
+                        </div>
+                    </div>
+                    <div class="col-4 offset-3">
+                        <div class="form-group">
+                            <label for="house-rotate-range" id="house-rotate-range-label">X: 150</label>
+                            <input id="house-rotate-range" type="range" class="form-control-range" value="0" min="-180"
+                                max="180" step="1">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="/main.bundle.js"></script>
+</body>
+
+</html>
